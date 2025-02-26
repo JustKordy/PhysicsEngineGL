@@ -1,7 +1,7 @@
 CMakeFiles/MyProject.dir/src/imgui/imgui.cpp.o: \
-  /Users/kordys/Desktop/Projects/OpenGL-Template/src/imgui/imgui.cpp \
-  /Users/kordys/Desktop/Projects/OpenGL-Template/src/imgui/imgui.h \
-  /Users/kordys/Desktop/Projects/OpenGL-Template/src/imgui/imconfig.h \
+  /Users/kordys/Desktop/Projects/PhysicsEngineGL/src/imgui/imgui.cpp \
+  /Users/kordys/Desktop/Projects/PhysicsEngineGL/src/imgui/imgui.h \
+  /Users/kordys/Desktop/Projects/PhysicsEngineGL/src/imgui/imconfig.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/float.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/__config \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/__config_site \
@@ -108,7 +108,7 @@ CMakeFiles/MyProject.dir/src/imgui/imgui.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/sys/_types/_mode_t.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/_assert.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/_static_assert.h \
-  /Users/kordys/Desktop/Projects/OpenGL-Template/src/imgui/imgui_internal.h \
+  /Users/kordys/Desktop/Projects/PhysicsEngineGL/src/imgui/imgui_internal.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/stdio.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/stdio.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/_stdio.h \

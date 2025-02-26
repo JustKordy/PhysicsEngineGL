@@ -1,6 +1,6 @@
 CMakeFiles/MyProject.dir/src/Camera/Camera.cpp.o: \
-  /Users/kordys/Desktop/Projects/OpenGL-Template/src/Camera/Camera.cpp \
-  /Users/kordys/Desktop/Projects/OpenGL-Template/src/Camera/Camera.h \
+  /Users/kordys/Desktop/Projects/PhysicsEngineGL/src/Camera/Camera.cpp \
+  /Users/kordys/Desktop/Projects/PhysicsEngineGL/src/Camera/Camera.h \
   /opt/homebrew/include/glm/glm.hpp \
   /opt/homebrew/include/glm/detail/_fixes.hpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/cmath \
@@ -448,7 +448,7 @@ CMakeFiles/MyProject.dir/src/Camera/Camera.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/System/Library/Frameworks/OpenGL.framework/Headers/gltypes.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/System/Library/Frameworks/OpenGL.framework/Headers/OpenGLAvailability.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/os/availability.h \
-  /Users/kordys/Desktop/Projects/OpenGL-Template/src/Camera/../Utils/Utils.h \
+  /Users/kordys/Desktop/Projects/PhysicsEngineGL/src/Camera/../Utils/Utils.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/string \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/__algorithm/max.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/__algorithm/comp.h \

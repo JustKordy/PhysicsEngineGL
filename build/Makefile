@@ -57,10 +57,10 @@ RM = /opt/homebrew/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/kordys/Desktop/Projects/OpenGL-Template
+CMAKE_SOURCE_DIR = /Users/kordys/Desktop/Projects/PhysicsEngineGL
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/kordys/Desktop/Projects/OpenGL-Template/build
+CMAKE_BINARY_DIR = /Users/kordys/Desktop/Projects/PhysicsEngineGL/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/kordys/Desktop/Projects/OpenGL-Template/build/CMakeFiles /Users/kordys/Desktop/Projects/OpenGL-Template/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/kordys/Desktop/Projects/PhysicsEngineGL/build/CMakeFiles /Users/kordys/Desktop/Projects/PhysicsEngineGL/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/kordys/Desktop/Projects/OpenGL-Template/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/kordys/Desktop/Projects/PhysicsEngineGL/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -153,6 +153,30 @@ src/Camera/Camera.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyProject.dir/build.make CMakeFiles/MyProject.dir/src/Camera/Camera.cpp.s
 .PHONY : src/Camera/Camera.cpp.s
 
+src/Components/RigidBody/RigidBody.o: src/Components/RigidBody/RigidBody.cpp.o
+.PHONY : src/Components/RigidBody/RigidBody.o
+
+# target to build an object file
+src/Components/RigidBody/RigidBody.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyProject.dir/build.make CMakeFiles/MyProject.dir/src/Components/RigidBody/RigidBody.cpp.o
+.PHONY : src/Components/RigidBody/RigidBody.cpp.o
+
+src/Components/RigidBody/RigidBody.i: src/Components/RigidBody/RigidBody.cpp.i
+.PHONY : src/Components/RigidBody/RigidBody.i
+
+# target to preprocess a source file
+src/Components/RigidBody/RigidBody.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyProject.dir/build.make CMakeFiles/MyProject.dir/src/Components/RigidBody/RigidBody.cpp.i
+.PHONY : src/Components/RigidBody/RigidBody.cpp.i
+
+src/Components/RigidBody/RigidBody.s: src/Components/RigidBody/RigidBody.cpp.s
+.PHONY : src/Components/RigidBody/RigidBody.s
+
+# target to generate assembly for a file
+src/Components/RigidBody/RigidBody.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyProject.dir/build.make CMakeFiles/MyProject.dir/src/Components/RigidBody/RigidBody.cpp.s
+.PHONY : src/Components/RigidBody/RigidBody.cpp.s
+
 src/Shader/Shader.o: src/Shader/Shader.cpp.o
 .PHONY : src/Shader/Shader.o
 
@@ -176,6 +200,54 @@ src/Shader/Shader.s: src/Shader/Shader.cpp.s
 src/Shader/Shader.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyProject.dir/build.make CMakeFiles/MyProject.dir/src/Shader/Shader.cpp.s
 .PHONY : src/Shader/Shader.cpp.s
+
+src/Shapes/Cube/Cube.o: src/Shapes/Cube/Cube.cpp.o
+.PHONY : src/Shapes/Cube/Cube.o
+
+# target to build an object file
+src/Shapes/Cube/Cube.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyProject.dir/build.make CMakeFiles/MyProject.dir/src/Shapes/Cube/Cube.cpp.o
+.PHONY : src/Shapes/Cube/Cube.cpp.o
+
+src/Shapes/Cube/Cube.i: src/Shapes/Cube/Cube.cpp.i
+.PHONY : src/Shapes/Cube/Cube.i
+
+# target to preprocess a source file
+src/Shapes/Cube/Cube.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyProject.dir/build.make CMakeFiles/MyProject.dir/src/Shapes/Cube/Cube.cpp.i
+.PHONY : src/Shapes/Cube/Cube.cpp.i
+
+src/Shapes/Cube/Cube.s: src/Shapes/Cube/Cube.cpp.s
+.PHONY : src/Shapes/Cube/Cube.s
+
+# target to generate assembly for a file
+src/Shapes/Cube/Cube.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyProject.dir/build.make CMakeFiles/MyProject.dir/src/Shapes/Cube/Cube.cpp.s
+.PHONY : src/Shapes/Cube/Cube.cpp.s
+
+src/Shapes/Shape.o: src/Shapes/Shape.cpp.o
+.PHONY : src/Shapes/Shape.o
+
+# target to build an object file
+src/Shapes/Shape.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyProject.dir/build.make CMakeFiles/MyProject.dir/src/Shapes/Shape.cpp.o
+.PHONY : src/Shapes/Shape.cpp.o
+
+src/Shapes/Shape.i: src/Shapes/Shape.cpp.i
+.PHONY : src/Shapes/Shape.i
+
+# target to preprocess a source file
+src/Shapes/Shape.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyProject.dir/build.make CMakeFiles/MyProject.dir/src/Shapes/Shape.cpp.i
+.PHONY : src/Shapes/Shape.cpp.i
+
+src/Shapes/Shape.s: src/Shapes/Shape.cpp.s
+.PHONY : src/Shapes/Shape.s
+
+# target to generate assembly for a file
+src/Shapes/Shape.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyProject.dir/build.make CMakeFiles/MyProject.dir/src/Shapes/Shape.cpp.s
+.PHONY : src/Shapes/Shape.cpp.s
 
 src/Utils/Utils.o: src/Utils/Utils.cpp.o
 .PHONY : src/Utils/Utils.o
@@ -405,9 +477,18 @@ help:
 	@echo "... src/Camera/Camera.o"
 	@echo "... src/Camera/Camera.i"
 	@echo "... src/Camera/Camera.s"
+	@echo "... src/Components/RigidBody/RigidBody.o"
+	@echo "... src/Components/RigidBody/RigidBody.i"
+	@echo "... src/Components/RigidBody/RigidBody.s"
 	@echo "... src/Shader/Shader.o"
 	@echo "... src/Shader/Shader.i"
 	@echo "... src/Shader/Shader.s"
+	@echo "... src/Shapes/Cube/Cube.o"
+	@echo "... src/Shapes/Cube/Cube.i"
+	@echo "... src/Shapes/Cube/Cube.s"
+	@echo "... src/Shapes/Shape.o"
+	@echo "... src/Shapes/Shape.i"
+	@echo "... src/Shapes/Shape.s"
 	@echo "... src/Utils/Utils.o"
 	@echo "... src/Utils/Utils.i"
 	@echo "... src/Utils/Utils.s"

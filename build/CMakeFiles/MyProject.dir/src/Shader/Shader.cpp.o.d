@@ -1,6 +1,6 @@
 CMakeFiles/MyProject.dir/src/Shader/Shader.cpp.o: \
-  /Users/kordys/Desktop/Projects/OpenGL-Template/src/Shader/Shader.cpp \
-  /Users/kordys/Desktop/Projects/OpenGL-Template/src/Shader/Shader.h \
+  /Users/kordys/Desktop/Projects/PhysicsEngineGL/src/Shader/Shader.cpp \
+  /Users/kordys/Desktop/Projects/PhysicsEngineGL/src/Shader/Shader.h \
   /opt/homebrew/include/GL/glew.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/cstddef \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/__assert \
@@ -1171,4 +1171,4 @@ CMakeFiles/MyProject.dir/src/Shader/Shader.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/__filesystem/u8path.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/sstream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/iostream \
-  /Users/kordys/Desktop/Projects/OpenGL-Template/src/Shader/../Logger/Logger.h
+  /Users/kordys/Desktop/Projects/PhysicsEngineGL/src/Shader/../Logger/Logger.h

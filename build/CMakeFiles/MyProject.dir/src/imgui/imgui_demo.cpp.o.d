@@ -1,7 +1,7 @@
 CMakeFiles/MyProject.dir/src/imgui/imgui_demo.cpp.o: \
-  /Users/kordys/Desktop/Projects/OpenGL-Template/src/imgui/imgui_demo.cpp \
-  /Users/kordys/Desktop/Projects/OpenGL-Template/src/imgui/imgui.h \
-  /Users/kordys/Desktop/Projects/OpenGL-Template/src/imgui/imconfig.h \
+  /Users/kordys/Desktop/Projects/PhysicsEngineGL/src/imgui/imgui_demo.cpp \
+  /Users/kordys/Desktop/Projects/PhysicsEngineGL/src/imgui/imgui.h \
+  /Users/kordys/Desktop/Projects/PhysicsEngineGL/src/imgui/imconfig.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/float.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/__config \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/__config_site \

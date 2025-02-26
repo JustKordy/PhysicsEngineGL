@@ -1,6 +1,6 @@
 CMakeFiles/MyProject.dir/src/Utils/Utils.cpp.o: \
-  /Users/kordys/Desktop/Projects/OpenGL-Template/src/Utils/Utils.cpp \
-  /Users/kordys/Desktop/Projects/OpenGL-Template/src/Utils/Utils.h \
+  /Users/kordys/Desktop/Projects/PhysicsEngineGL/src/Utils/Utils.cpp \
+  /Users/kordys/Desktop/Projects/PhysicsEngineGL/src/Utils/Utils.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/string \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/__algorithm/max.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/__algorithm/comp.h \
@@ -816,11 +816,11 @@ CMakeFiles/MyProject.dir/src/Utils/Utils.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/System/Library/Frameworks/OpenGL.framework/Headers/OpenGLAvailability.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/os/availability.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/System/Library/Frameworks/OpenGL.framework/Headers/gl.h \
-  /Users/kordys/Desktop/Projects/OpenGL-Template/src/Utils/../stb_image/stb_image.h \
+  /Users/kordys/Desktop/Projects/PhysicsEngineGL/src/Utils/../stb_image/stb_image.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/assert.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/_assert.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/_static_assert.h \
-  /Users/kordys/Desktop/Projects/OpenGL-Template/src/Utils/../Logger/Logger.h \
+  /Users/kordys/Desktop/Projects/PhysicsEngineGL/src/Utils/../Logger/Logger.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/iostream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/ios \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/__locale \

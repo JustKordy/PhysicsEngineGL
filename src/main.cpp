@@ -11,6 +11,8 @@
 #include "imgui/imgui.h"
 #include "imgui/imgui_impl_glfw.h"
 #include "imgui/imgui_impl_opengl3.h"
+#include "Components/RigidBody/RigidBody.h"
+#include "Shapes/Cube/Cube.h"
 
 void mouse_callback(GLFWwindow *window, double xpos, double ypos);
 void scroll_callback(GLFWwindow *window, double xoffset, double yoffset);
@@ -53,24 +55,20 @@ int main()
 
     Shader shader(Utils::GetResourcePath("/shaders/triangle.vert").c_str(), Utils::GetResourcePath("/shaders/triangle.frag").c_str());
 
-    float triVert[] = {
-        0.0f, 0.5f, 0.0f,
-        0.5f, -0.5f, 0.0f,
-        -0.5f, -0.5f, 0.0f};
+    float planeVertices[] = {
+        -5.0f, 0.0f, -5.0f, 0.0f, 1.0f, 0.0f, // Bottom-left
+        5.0f, 0.0f, -5.0f, 0.0f, 1.0f, 0.0f,  // Bottom-right
+        -5.0f, 0.0f, 5.0f, 0.0f, 1.0f, 0.0f,  // Top-left
+        5.0f, 0.0f, 5.0f, 0.0f, 1.0f, 0.0f    // Top-right
+    };
+    unsigned int indices[] = {0, 1, 2, 1, 3, 2};
 
-    unsigned int VBO, VAO;
-
-    glGenVertexArrays(1, &VAO);
-    glGenBuffers(1, &VBO);
-
-    glBindBuffer(GL_ARRAY_BUFFER, VBO);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(triVert), triVert, GL_STATIC_DRAW);
-
-    glBindVertexArray(VAO);
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void *)0);
-    glEnableVertexAttribArray(0);
+    
 
     shader.use();
+
+    Cube* cube = new Cube({0.f, 0.f, 0.f}, 1.f);
+    
 
     IMGUI_CHECKVERSION();
     ImGui::CreateContext();
@@ -97,8 +95,7 @@ int main()
         cam->HandleInput(window);
         cam->Update();
 
-        glBindVertexArray(VAO);
-        glDrawArrays(GL_TRIANGLES, 0, 3);
+        cube->Draw(shader, {0.f, 0.f, 0.f}, {1.f, 1.f, 1.f});
 
         ImGui::Begin("Template");
         ImGui::Text("Some text");

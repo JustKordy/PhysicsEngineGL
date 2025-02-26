@@ -1,7 +1,7 @@
 CMakeFiles/MyProject.dir/src/imgui/imgui_impl_opengl3.cpp.o: \
-  /Users/kordys/Desktop/Projects/OpenGL-Template/src/imgui/imgui_impl_opengl3.cpp \
-  /Users/kordys/Desktop/Projects/OpenGL-Template/src/imgui/imgui.h \
-  /Users/kordys/Desktop/Projects/OpenGL-Template/src/imgui/imconfig.h \
+  /Users/kordys/Desktop/Projects/PhysicsEngineGL/src/imgui/imgui_impl_opengl3.cpp \
+  /Users/kordys/Desktop/Projects/PhysicsEngineGL/src/imgui/imgui.h \
+  /Users/kordys/Desktop/Projects/PhysicsEngineGL/src/imgui/imconfig.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/float.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/__config \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/__config_site \
@@ -108,7 +108,7 @@ CMakeFiles/MyProject.dir/src/imgui/imgui_impl_opengl3.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/sys/_types/_mode_t.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/_assert.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/_static_assert.h \
-  /Users/kordys/Desktop/Projects/OpenGL-Template/src/imgui/imgui_impl_opengl3.h \
+  /Users/kordys/Desktop/Projects/PhysicsEngineGL/src/imgui/imgui_impl_opengl3.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/TargetConditionals.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/stdio.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/stdio.h \
@@ -119,7 +119,7 @@ CMakeFiles/MyProject.dir/src/imgui/imgui_impl_opengl3.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/sys/_types/_seek_set.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/_ctermid.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/sys/_types/_off_t.h \
-  /Users/kordys/Desktop/Projects/OpenGL-Template/src/imgui/imgui_impl_opengl3_loader.h \
+  /Users/kordys/Desktop/Projects/PhysicsEngineGL/src/imgui/imgui_impl_opengl3_loader.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/dlfcn.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/stdbool.h \
   /Library/Developer/CommandLineTools/usr/lib/clang/16/include/stdbool.h

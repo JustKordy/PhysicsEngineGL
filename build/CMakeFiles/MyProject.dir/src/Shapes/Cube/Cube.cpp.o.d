@@ -1,5 +1,7 @@
-CMakeFiles/MyProject.dir/src/main.cpp.o: \
-  /Users/kordys/Desktop/Projects/PhysicsEngineGL/src/main.cpp \
+CMakeFiles/MyProject.dir/src/Shapes/Cube/Cube.cpp.o: \
+  /Users/kordys/Desktop/Projects/PhysicsEngineGL/src/Shapes/Cube/Cube.cpp \
+  /Users/kordys/Desktop/Projects/PhysicsEngineGL/src/Shapes/Cube/Cube.h \
+  /Users/kordys/Desktop/Projects/PhysicsEngineGL/src/Shapes/Cube/../Shape.h \
   /opt/homebrew/include/glm/glm.hpp \
   /opt/homebrew/include/glm/detail/_fixes.hpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/cmath \
@@ -465,108 +467,12 @@ CMakeFiles/MyProject.dir/src/main.cpp.o: \
   /opt/homebrew/include/glm/gtc/../geometric.hpp \
   /opt/homebrew/include/glm/gtc/../trigonometric.hpp \
   /opt/homebrew/include/glm/gtc/../matrix.hpp \
-  /opt/homebrew/include/glm/gtc/type_ptr.hpp \
-  /opt/homebrew/include/glm/gtc/../gtc/quaternion.hpp \
-  /opt/homebrew/include/glm/gtc/../gtc/../gtc/constants.hpp \
-  /opt/homebrew/include/glm/gtc/../gtc/../gtc/matrix_transform.hpp \
-  /opt/homebrew/include/glm/gtc/../gtc/../ext/vector_relational.hpp \
-  /opt/homebrew/include/glm/gtc/../gtc/../ext/../detail/qualifier.hpp \
-  /opt/homebrew/include/glm/gtc/../gtc/../ext/vector_relational.inl \
-  /opt/homebrew/include/glm/gtc/../gtc/../ext/../vector_relational.hpp \
-  /opt/homebrew/include/glm/gtc/../gtc/../ext/../common.hpp \
-  /opt/homebrew/include/glm/gtc/../gtc/../ext/../detail/type_float.hpp \
-  /opt/homebrew/include/glm/gtc/../gtc/../ext/../detail/setup.hpp \
-  /opt/homebrew/include/glm/gtc/../gtc/../ext/quaternion_common.hpp \
-  /opt/homebrew/include/glm/gtc/../gtc/../ext/../ext/scalar_constants.hpp \
-  /opt/homebrew/include/glm/gtc/../gtc/../ext/../ext/quaternion_geometric.hpp \
-  /opt/homebrew/include/glm/gtc/../gtc/../ext/../ext/../geometric.hpp \
-  /opt/homebrew/include/glm/gtc/../gtc/../ext/../ext/../exponential.hpp \
-  /opt/homebrew/include/glm/gtc/../gtc/../ext/../ext/../ext/vector_relational.hpp \
-  /opt/homebrew/include/glm/gtc/../gtc/../ext/../ext/quaternion_geometric.inl \
-  /opt/homebrew/include/glm/gtc/../gtc/../ext/../trigonometric.hpp \
-  /opt/homebrew/include/glm/gtc/../gtc/../ext/../exponential.hpp \
-  /opt/homebrew/include/glm/gtc/../gtc/../ext/quaternion_common.inl \
-  /opt/homebrew/include/glm/gtc/../gtc/../ext/quaternion_float.hpp \
-  /opt/homebrew/include/glm/gtc/../gtc/../ext/../detail/type_quat.hpp \
-  /opt/homebrew/include/glm/gtc/../gtc/../ext/../detail/../detail/type_mat3x3.hpp \
-  /opt/homebrew/include/glm/gtc/../gtc/../ext/../detail/../detail/type_mat4x4.hpp \
-  /opt/homebrew/include/glm/gtc/../gtc/../ext/../detail/../detail/type_vec3.hpp \
-  /opt/homebrew/include/glm/gtc/../gtc/../ext/../detail/../detail/type_vec4.hpp \
-  /opt/homebrew/include/glm/gtc/../gtc/../ext/../detail/../ext/vector_relational.hpp \
-  /opt/homebrew/include/glm/gtc/../gtc/../ext/../detail/../ext/quaternion_relational.hpp \
-  /opt/homebrew/include/glm/gtc/../gtc/../ext/../detail/../ext/../vector_relational.hpp \
-  /opt/homebrew/include/glm/gtc/../gtc/../ext/../detail/../ext/quaternion_relational.inl \
-  /opt/homebrew/include/glm/gtc/../gtc/../ext/../detail/../gtc/constants.hpp \
-  /opt/homebrew/include/glm/gtc/../gtc/../ext/../detail/../gtc/matrix_transform.hpp \
-  /opt/homebrew/include/glm/gtc/../gtc/../ext/../detail/type_quat.inl \
-  /opt/homebrew/include/glm/gtc/../gtc/../ext/../detail/../trigonometric.hpp \
-  /opt/homebrew/include/glm/gtc/../gtc/../ext/../detail/../exponential.hpp \
-  /opt/homebrew/include/glm/gtc/../gtc/../ext/../detail/../ext/quaternion_common.hpp \
-  /opt/homebrew/include/glm/gtc/../gtc/../ext/../detail/../ext/quaternion_geometric.hpp \
-  /opt/homebrew/include/glm/gtc/../gtc/../ext/quaternion_float_precision.hpp \
-  /opt/homebrew/include/glm/gtc/../gtc/../ext/quaternion_double.hpp \
-  /opt/homebrew/include/glm/gtc/../gtc/../ext/quaternion_double_precision.hpp \
-  /opt/homebrew/include/glm/gtc/../gtc/../ext/quaternion_relational.hpp \
-  /opt/homebrew/include/glm/gtc/../gtc/../ext/quaternion_geometric.hpp \
-  /opt/homebrew/include/glm/gtc/../gtc/../ext/quaternion_trigonometric.hpp \
-  /opt/homebrew/include/glm/gtc/../gtc/../ext/scalar_constants.hpp \
-  /opt/homebrew/include/glm/gtc/../gtc/../ext/quaternion_trigonometric.inl \
-  /opt/homebrew/include/glm/gtc/../gtc/../ext/quaternion_transform.hpp \
-  /opt/homebrew/include/glm/gtc/../gtc/../ext/../geometric.hpp \
-  /opt/homebrew/include/glm/gtc/../gtc/../ext/quaternion_transform.inl \
-  /opt/homebrew/include/glm/gtc/../gtc/../detail/type_mat3x3.hpp \
-  /opt/homebrew/include/glm/gtc/../gtc/../detail/type_mat4x4.hpp \
-  /opt/homebrew/include/glm/gtc/../gtc/../detail/type_vec3.hpp \
-  /opt/homebrew/include/glm/gtc/../gtc/../detail/type_vec4.hpp \
-  /opt/homebrew/include/glm/gtc/../gtc/quaternion.inl \
-  /opt/homebrew/include/glm/gtc/../gtc/../trigonometric.hpp \
-  /opt/homebrew/include/glm/gtc/../gtc/../geometric.hpp \
-  /opt/homebrew/include/glm/gtc/../gtc/../exponential.hpp \
-  /opt/homebrew/include/glm/gtc/../gtc/epsilon.hpp \
-  /opt/homebrew/include/glm/gtc/../gtc/../detail/setup.hpp \
-  /opt/homebrew/include/glm/gtc/../gtc/../detail/qualifier.hpp \
-  /opt/homebrew/include/glm/gtc/../gtc/epsilon.inl \
-  /opt/homebrew/include/glm/gtc/../gtc/../vector_relational.hpp \
-  /opt/homebrew/include/glm/gtc/../gtc/../common.hpp \
-  /opt/homebrew/include/glm/gtc/../gtc/vec1.hpp \
-  /opt/homebrew/include/glm/gtc/../gtc/../ext/vector_bool1.hpp \
-  /opt/homebrew/include/glm/gtc/../gtc/../ext/../detail/type_vec1.hpp \
-  /opt/homebrew/include/glm/gtc/../gtc/../ext/vector_bool1_precision.hpp \
-  /opt/homebrew/include/glm/gtc/../gtc/../ext/vector_float1.hpp \
-  /opt/homebrew/include/glm/gtc/../gtc/../ext/vector_float1_precision.hpp \
-  /opt/homebrew/include/glm/gtc/../gtc/../ext/vector_double1.hpp \
-  /opt/homebrew/include/glm/gtc/../gtc/../ext/vector_double1_precision.hpp \
-  /opt/homebrew/include/glm/gtc/../gtc/../ext/vector_int1.hpp \
-  /opt/homebrew/include/glm/gtc/../gtc/../ext/vector_int1_sized.hpp \
-  /opt/homebrew/include/glm/gtc/../gtc/../ext/../ext/vector_int1.hpp \
-  /opt/homebrew/include/glm/gtc/../gtc/../ext/../ext/scalar_int_sized.hpp \
-  /opt/homebrew/include/glm/gtc/../gtc/../ext/vector_uint1.hpp \
-  /opt/homebrew/include/glm/gtc/../gtc/../ext/vector_uint1_sized.hpp \
-  /opt/homebrew/include/glm/gtc/../gtc/../ext/../ext/vector_uint1.hpp \
-  /opt/homebrew/include/glm/gtc/../gtc/../ext/../ext/scalar_uint_sized.hpp \
-  /opt/homebrew/include/glm/gtc/../mat2x2.hpp \
-  /opt/homebrew/include/glm/gtc/../mat2x3.hpp \
-  /opt/homebrew/include/glm/gtc/../mat2x4.hpp \
-  /opt/homebrew/include/glm/gtc/../mat3x2.hpp \
-  /opt/homebrew/include/glm/gtc/../mat3x3.hpp \
-  /opt/homebrew/include/glm/gtc/../mat3x4.hpp \
-  /opt/homebrew/include/glm/gtc/../mat4x2.hpp \
-  /opt/homebrew/include/glm/gtc/../mat4x3.hpp \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/cstring \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/string.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/string.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/_string.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/sys/_types/_rsize_t.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/sys/_types/_errno_t.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/sys/_types/_ssize_t.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/_strings.h \
-  /opt/homebrew/include/glm/gtc/type_ptr.inl \
+  /Users/kordys/Desktop/Projects/PhysicsEngineGL/src/Shapes/Cube/../../Shader/Shader.h \
   /opt/homebrew/include/GL/glew.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/System/Library/Frameworks/OpenGL.framework/Headers/glu.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/System/Library/Frameworks/OpenGL.framework/Headers/OpenGLAvailability.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/os/availability.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/System/Library/Frameworks/OpenGL.framework/Headers/gl.h \
-  /Users/kordys/Desktop/Projects/PhysicsEngineGL/src/Utils/Utils.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/string \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/__algorithm/max.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/__algorithm/comp.h \
@@ -664,6 +570,7 @@ CMakeFiles/MyProject.dir/src/main.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/sys/_types/_seek_set.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/_ctermid.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/sys/_types/_off_t.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/sys/_types/_ssize_t.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/time.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/_time.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/sys/_types/_clock_t.h \
@@ -694,6 +601,13 @@ CMakeFiles/MyProject.dir/src/main.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/__tuple/pair_like.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/__tuple/tuple_like.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/__utility/piecewise_construct.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/cstring \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/string.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/string.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/_string.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/sys/_types/_rsize_t.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/sys/_types/_errno_t.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/_strings.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/__fwd/string.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/__fwd/memory_resource.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/__ios/fpos.h \
@@ -1116,9 +1030,7 @@ CMakeFiles/MyProject.dir/src/main.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/__bit/byteswap.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/__bit/endian.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/__bit/has_single_bit.h \
-  /opt/homebrew/include/GLFW/glfw3.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/iostream \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/ios \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/fstream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/__locale \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/__mutex/once_flag.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/__utility/no_destroy.h \
@@ -1138,22 +1050,24 @@ CMakeFiles/MyProject.dir/src/main.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/xlocale/_time.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/xlocale/_wchar.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/xlocale/_wctype.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/__system_error/error_category.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/filesystem \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/__filesystem/copy_options.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/__filesystem/directory_entry.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/__filesystem/file_status.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/__filesystem/file_type.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/__filesystem/perms.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/__filesystem/file_time_type.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/__chrono/file_clock.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/__filesystem/filesystem_error.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/__filesystem/path.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/iomanip \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/istream \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/ostream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/__system_error/error_code.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/__system_error/errc.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/cerrno \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/__system_error/error_category.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/__system_error/error_condition.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/__system_error/system_error.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/mutex \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/__condition_variable/condition_variable.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/__mutex/mutex.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/__mutex/unique_lock.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/__mutex/tag_types.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/__mutex/lock_guard.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/__thread/id.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/system_error \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/istream \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/ostream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/bitset \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/__bit_reference \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/format \
@@ -1173,6 +1087,16 @@ CMakeFiles/MyProject.dir/src/main.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/__format/format_arg_store.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/__format/format_args.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/locale \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/ios \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/__system_error/system_error.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/mutex \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/__condition_variable/condition_variable.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/__mutex/mutex.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/__mutex/unique_lock.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/__mutex/tag_types.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/__mutex/lock_guard.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/__thread/id.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/system_error \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/streambuf \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/nl_types.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/sys/types.h \
@@ -1263,20 +1187,6 @@ CMakeFiles/MyProject.dir/src/main.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/__format/formatter_tuple.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/print \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/unistd.h \
-  /Users/kordys/Desktop/Projects/PhysicsEngineGL/src/Logger/Logger.h \
-  /Users/kordys/Desktop/Projects/PhysicsEngineGL/src/Shader/Shader.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/fstream \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/filesystem \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/__filesystem/copy_options.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/__filesystem/directory_entry.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/__filesystem/file_status.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/__filesystem/file_type.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/__filesystem/perms.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/__filesystem/file_time_type.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/__chrono/file_clock.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/__filesystem/filesystem_error.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/__filesystem/path.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/iomanip \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/__filesystem/operations.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/__filesystem/perm_options.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/__filesystem/space_info.h \
@@ -1286,14 +1196,4 @@ CMakeFiles/MyProject.dir/src/main.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/__filesystem/recursive_directory_iterator.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/__filesystem/u8path.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/sstream \
-  /Users/kordys/Desktop/Projects/PhysicsEngineGL/src/Camera/Camera.h \
-  /Users/kordys/Desktop/Projects/PhysicsEngineGL/src/imgui/imgui.h \
-  /Users/kordys/Desktop/Projects/PhysicsEngineGL/src/imgui/imconfig.h \
-  /Users/kordys/Desktop/Projects/PhysicsEngineGL/src/imgui/imgui_impl_glfw.h \
-  /Users/kordys/Desktop/Projects/PhysicsEngineGL/src/imgui/imgui_impl_opengl3.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/TargetConditionals.h \
-  /Users/kordys/Desktop/Projects/PhysicsEngineGL/src/Components/RigidBody/RigidBody.h \
-  /Users/kordys/Desktop/Projects/PhysicsEngineGL/src/Components/RigidBody/../Component.h \
-  /Users/kordys/Desktop/Projects/PhysicsEngineGL/src/Shapes/Cube/Cube.h \
-  /Users/kordys/Desktop/Projects/PhysicsEngineGL/src/Shapes/Cube/../Shape.h \
-  /Users/kordys/Desktop/Projects/PhysicsEngineGL/src/Shapes/Cube/../../Shader/Shader.h
+  /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/iostream
