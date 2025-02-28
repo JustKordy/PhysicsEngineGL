@@ -20,11 +20,11 @@ public:
     void SetAcceleration() const override;
     void SetMass() const override;
     
-    glm::vec3& GetPosition() const override;
-    glm::vec3& GetVelocity() const override;
-    glm::vec3& GetAcceleration() const override;
+    const glm::vec3& GetPosition() const override;
+    const glm::vec3& GetVelocity() const override;
+    const glm::vec3& GetAcceleration() const override;
 
-    float& GetMass() const override;
+    const float& GetMass() const override;
 
 
     static bool m_Initialized;

@@ -63,8 +63,6 @@ int main()
     };
     unsigned int indices[] = {0, 1, 2, 1, 3, 2};
 
-    
-
     shader.use();
 
     Cube* cube = new Cube({0.f, 0.f, 0.f}, 1.f);
@@ -94,6 +92,11 @@ int main()
 
         cam->HandleInput(window);
         cam->Update();
+
+    
+        shader.use();
+        shader.setMat4("u_Projection", cam->GetProjection());
+        shader.setMat4("u_View", cam->GetView());
 
         cube->Draw(shader, {0.f, 0.f, 0.f}, {1.f, 1.f, 1.f});
 

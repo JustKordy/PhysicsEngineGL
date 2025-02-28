@@ -10,11 +10,11 @@ public:
     virtual void SetAcceleration() const = 0;
     virtual void SetMass() const = 0;
     
-    virtual glm::vec3& GetPosition() const = 0;
-    virtual glm::vec3& GetVelocity() const = 0;
-    virtual glm::vec3& GetAcceleration() const = 0;
+    const virtual glm::vec3& GetPosition() const = 0;
+    const virtual glm::vec3& GetVelocity() const = 0;
+    const virtual glm::vec3& GetAcceleration() const = 0;
 
-    virtual float& GetMass() const = 0;
+    const virtual float& GetMass() const = 0;
 
 
 private: 

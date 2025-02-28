@@ -60,7 +60,8 @@ Cube::Cube(const glm::vec3 &pos, float mass)
             8, 9, 10, 10, 11, 8,
             12, 13, 14, 14, 15, 12,
             16, 17, 18, 18, 19, 16,
-            20, 21, 22, 22, 23, 20};
+            20, 21, 22, 22, 23, 20
+        };
 
         glGenVertexArrays(1, &m_VAO);
         glGenBuffers(1, &m_VBO);
@@ -118,16 +119,16 @@ void Cube::Draw(Shader &shader, glm::vec3 position, glm::vec3 scale)
 
     }
     
-    glm::vec3& Cube::GetPosition() const {
-
+    const glm::vec3& Cube::GetPosition() const {
+        return this->m_Positon;
     }
-    glm::vec3& Cube::GetVelocity() const {
-
+    const glm::vec3& Cube::GetVelocity() const {
+        return this->m_Velocity;
     }
-    glm::vec3& Cube::GetAcceleration() const {
-
+    const glm::vec3& Cube::GetAcceleration() const {
+        return this->m_Acceleration;
     }
 
-    float& Cube::GetMass() const {
-
+    const float& Cube::GetMass() const {
+        return this->m_Mass;
     }
