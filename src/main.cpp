@@ -13,6 +13,7 @@
 #include "imgui/imgui_impl_opengl3.h"
 #include "Components/RigidBody/RigidBody.h"
 #include "Shapes/Cube/Cube.h"
+#include "Renderer/Renderer.h"
 
 void mouse_callback(GLFWwindow *window, double xpos, double ypos);
 void scroll_callback(GLFWwindow *window, double xoffset, double yoffset);
@@ -65,7 +66,7 @@ int main()
 
     shader.use();
 
-    Cube* cube = new Cube({0.f, 0.f, 0.f}, 1.f);
+    Cube* cube = new Cube(shader);
     
 
     IMGUI_CHECKVERSION();
@@ -93,12 +94,14 @@ int main()
         cam->HandleInput(window);
         cam->Update();
 
-    
+        cube->SetShader(shader);
+        cube->SetPosition(glm::vec3(0.f));
+        Renderer::Render(cube);
+        
         shader.use();
         shader.setMat4("u_Projection", cam->GetProjection());
         shader.setMat4("u_View", cam->GetView());
 
-        cube->Draw(shader, {0.f, 0.f, 0.f}, {1.f, 1.f, 1.f});
 
         ImGui::Begin("Template");
         ImGui::Text("Some text");

@@ -5,10 +5,10 @@
 class Shape{
 public:
     
-    virtual void Update() const = 0;
-    virtual void SetPosition() const = 0;
-    virtual void SetAcceleration() const = 0;
-    virtual void SetMass() const = 0;
+    virtual void Update() = 0;
+    virtual void SetPosition(glm::vec3 && pos) = 0;
+    virtual void SetAcceleration(glm::vec3&& acc) = 0;
+    virtual void SetMass(float mass) = 0;
     
     const virtual glm::vec3& GetPosition() const = 0;
     const virtual glm::vec3& GetVelocity() const = 0;
