@@ -12,4 +12,6 @@ public:
         std::cout << "[LOGGER]: ";
         ((std::cout<< "\033[32m" <<  std::forward<Targs>(args) << "\033[0m" << " "), ...) << std::endl;
     }
+
+
 };

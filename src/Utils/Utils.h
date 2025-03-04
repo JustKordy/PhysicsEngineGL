@@ -2,11 +2,12 @@
 #include <string>
 
 
-#define SCREEN_WIDTH 1280
-#define SCREEN_HEIGHT 900
+#define SCREEN_WIDTH Utils::WindowWidth
+#define SCREEN_HEIGHT Utils::WindowHeight
 
 #define SCREEN_WIDTH_HALF (SCREEN_WIDTH / 2)
 #define SCREEN_HEIGHT_HALF (SCREEN_HEIGHT / 2)
+
 
 
 class Utils
@@ -32,6 +33,9 @@ public:
     static unsigned int LoadTexture(char const* path);
 
     static std::string GetResourcePath(const std::string& file);
+
+    static int WindowHeight;
+    static int WindowWidth;
 
 private: 
     static float m_DeltaTime;

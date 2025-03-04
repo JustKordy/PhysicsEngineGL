@@ -14,6 +14,7 @@
 #include "Components/RigidBody/RigidBody.h"
 #include "Shapes/Cube/Cube.h"
 #include "Renderer/Renderer.h"
+#include "Plane/Plane.h"
 
 void mouse_callback(GLFWwindow *window, double xpos, double ypos);
 void scroll_callback(GLFWwindow *window, double xoffset, double yoffset);
@@ -54,19 +55,14 @@ int main()
 
     glEnable(GL_DEPTH_TEST);
 
-    Shader shader(Utils::GetResourcePath("/shaders/triangle.vert").c_str(), Utils::GetResourcePath("/shaders/triangle.frag").c_str());
+    Shader cubeShader(Utils::GetResourcePath("/shaders/cube.vert").c_str(), Utils::GetResourcePath("/shaders/cube.frag").c_str());
+    Shader planeShader(Utils::GetResourcePath("/shaders/plane.vert").c_str(), Utils::GetResourcePath("/shaders/plane.frag").c_str());
 
-    float planeVertices[] = {
-        -5.0f, 0.0f, -5.0f, 0.0f, 1.0f, 0.0f, // Bottom-left
-        5.0f, 0.0f, -5.0f, 0.0f, 1.0f, 0.0f,  // Bottom-right
-        -5.0f, 0.0f, 5.0f, 0.0f, 1.0f, 0.0f,  // Top-left
-        5.0f, 0.0f, 5.0f, 0.0f, 1.0f, 0.0f    // Top-right
-    };
-    unsigned int indices[] = {0, 1, 2, 1, 3, 2};
 
-    shader.use();
+    Cube* cube = new Cube(cubeShader);
+    Plane* plane = new Plane(planeShader);
 
-    Cube* cube = new Cube(shader);
+    unsigned int transparentTexture = Utils::LoadTexture(Utils::GetResourcePath("transBack.png").c_str());
     
 
     IMGUI_CHECKVERSION();
@@ -75,6 +71,7 @@ int main()
     ImGui::StyleColorsDark();
     ImGui_ImplGlfw_InitForOpenGL(window, true);
     ImGui_ImplOpenGL3_Init("#version 330");
+
 
     while (!glfwWindowShouldClose(window))
     {
@@ -94,14 +91,23 @@ int main()
         cam->HandleInput(window);
         cam->Update();
 
-        cube->SetShader(shader);
         cube->SetPosition(glm::vec3(0.f));
-        Renderer::Render(cube);
-        
-        shader.use();
-        shader.setMat4("u_Projection", cam->GetProjection());
-        shader.setMat4("u_View", cam->GetView());
+        plane->SetPosition(glm::vec3(0.f, -5.f, -3.f));
 
+        cubeShader.use();
+        cubeShader.setMat4("u_Projection", cam->GetProjection());
+        cubeShader.setMat4("u_View", cam->GetView());
+        Renderer::Render(cube); 
+        
+        planeShader.use();
+        planeShader.setMat4("u_Projection", cam->GetProjection());
+        planeShader.setMat4("u_View", cam->GetView());
+
+        glActiveTexture(GL_TEXTURE0);
+        glBindTexture(GL_TEXTURE_2D, transparentTexture);
+        planeShader.setInt("tex", 0);
+        Renderer::Render(plane);
+        
 
         ImGui::Begin("Template");
         ImGui::Text("Some text");
@@ -124,6 +130,8 @@ int main()
 void framebuffer_size_callback(GLFWwindow *window, int width, int height)
 {
     glViewport(0, 0, width, height);
+    Utils::WindowHeight = height;
+    Utils::WindowWidth = width;
 }
 
 void mouse_callback(GLFWwindow *window, double xposIn, double yposIn)

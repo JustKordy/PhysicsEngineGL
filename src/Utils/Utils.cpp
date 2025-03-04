@@ -7,12 +7,13 @@
 
 float Utils::m_DeltaTime = 0.0f;
 bool Utils::MouseClicked = false;
-
+int Utils::WindowHeight = 900;
+int Utils::WindowWidth = 1280;
 
 unsigned int Utils::LoadTexture(const char* path) {
     unsigned int textureID;
     glGenTextures(1, &textureID);
-    stbi_set_flip_vertically_on_load(true);
+    stbi_set_flip_vertically_on_load(true); 
     int width, height, nrComponents;
     unsigned char* data = stbi_load(path, &width, &height, &nrComponents, 0);
     if (data)
@@ -20,9 +21,9 @@ unsigned int Utils::LoadTexture(const char* path) {
         GLenum format;
         if (nrComponents == 1)
             format = GL_RED;
-        else if (nrComponents == 3)
+        else if (nrComponents == 3 || nrComponents == 1)
             format = GL_RGB;
-        else if (nrComponents == 4)
+        else if (nrComponents == 4 || nrComponents == 1)
             format = GL_RGBA;
 
         glBindTexture(GL_TEXTURE_2D, textureID);
@@ -34,11 +35,11 @@ unsigned int Utils::LoadTexture(const char* path) {
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
         stbi_image_free(data);
-        Logger::Log("Successfully loaded texture", path);
+        Logger::Log("Successfully loaded texture", path , "with", nrComponents, "channels");
     }
     else
     {
-        Logger::Log("Texture failed to loat at path", path);
+        Logger::Log("Texture failed to load at path", path);
         stbi_image_free(data);
     }
 
