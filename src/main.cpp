@@ -15,6 +15,7 @@
 #include "Shapes/Cube/Cube.h"
 #include "Renderer/Renderer.h"
 #include "Plane/Plane.h"
+#include "Scene/Scene.h"
 
 void mouse_callback(GLFWwindow *window, double xpos, double ypos);
 void scroll_callback(GLFWwindow *window, double xoffset, double yoffset);
@@ -24,7 +25,8 @@ void mouse_button_callback(GLFWwindow *window, int button, int action, int mods)
 float deltaTime = 0.0f;
 float lastFrame = 0.0f;
 
-Camera *cam = new Camera();
+
+Camera* Scene::m_Camera = new Camera();
 int main()
 {
     glfwInit();
@@ -58,9 +60,17 @@ int main()
     Shader cubeShader(Utils::GetResourcePath("/shaders/cube.vert").c_str(), Utils::GetResourcePath("/shaders/cube.frag").c_str());
     Shader planeShader(Utils::GetResourcePath("/shaders/plane.vert").c_str(), Utils::GetResourcePath("/shaders/plane.frag").c_str());
 
-
+    
+    Scene* scene = new Scene();
     Cube* cube = new Cube(cubeShader);
     Plane* plane = new Plane(planeShader);
+
+    
+
+    cube->SetPosition(glm::vec3(0.f, 1.f, -8.f));
+    cube->Scale(glm::vec3(.3f));
+    plane->SetPosition(glm::vec3(0.f, -2.f, -8.f));
+
 
     unsigned int transparentTexture = Utils::LoadTexture(Utils::GetResourcePath("transBack.png").c_str());
     
@@ -71,6 +81,7 @@ int main()
     ImGui::StyleColorsDark();
     ImGui_ImplGlfw_InitForOpenGL(window, true);
     ImGui_ImplOpenGL3_Init("#version 330");
+
 
 
     while (!glfwWindowShouldClose(window))
@@ -88,21 +99,14 @@ int main()
         glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-        cam->HandleInput(window);
-        cam->Update();
+        Scene::m_Camera->HandleInput(window);
+        Scene::m_Camera->Update();
 
-        cube->SetPosition(glm::vec3(0.f));
-        plane->SetPosition(glm::vec3(0.f, -5.f, -3.f));
-
-        cubeShader.use();
-        cubeShader.setMat4("u_Projection", cam->GetProjection());
-        cubeShader.setMat4("u_View", cam->GetView());
+       
+        
         Renderer::Render(cube); 
         
-        planeShader.use();
-        planeShader.setMat4("u_Projection", cam->GetProjection());
-        planeShader.setMat4("u_View", cam->GetView());
-
+      
         glActiveTexture(GL_TEXTURE0);
         glBindTexture(GL_TEXTURE_2D, transparentTexture);
         planeShader.setInt("tex", 0);
@@ -136,7 +140,7 @@ void framebuffer_size_callback(GLFWwindow *window, int width, int height)
 
 void mouse_callback(GLFWwindow *window, double xposIn, double yposIn)
 {
-    cam->HandleLook(xposIn, yposIn, Utils::isMouseClicked());
+    Scene::m_Camera->HandleLook(xposIn, yposIn, Utils::isMouseClicked());
 }
 
 void mouse_button_callback(GLFWwindow *window, int button, int action, int mods)
@@ -149,5 +153,5 @@ void mouse_button_callback(GLFWwindow *window, int button, int action, int mods)
 
 void scroll_callback(GLFWwindow *window, double xoffset, double yoffset)
 {
-    cam->HandleZoom(yoffset);
+    Scene::m_Camera->HandleZoom(yoffset);
 }

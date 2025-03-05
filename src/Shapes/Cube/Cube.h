@@ -11,7 +11,7 @@ public:
     Cube(const Shader& shader);
     ~Cube();
 
-    void Draw();
+    void Draw() override;
 
 
 
@@ -20,6 +20,9 @@ public:
     void SetAcceleration(glm::vec3&& acc) override;
     void SetMass(float mass) override;
     void SetShader(const Shader& shader);
+
+    void Scale(glm::vec3 scale) override;
+    void Rotate(float degrees, glm::vec3 rotationVector) override;
     
     const glm::vec3& GetPosition() const override;
     const glm::vec3& GetVelocity() const override;
@@ -32,6 +35,8 @@ public:
     static unsigned int m_VBO, m_VAO, m_EBO;
 
 private:
+    glm::mat4 m_Model;
+
     glm::vec3 m_Positon;
     glm::vec3 m_Velocity;
     glm::vec3 m_Acceleration;

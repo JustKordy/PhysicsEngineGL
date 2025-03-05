@@ -1,12 +1,14 @@
 #include "Cube.h"
 #include <GL/glew.h>
+#include "../../Logger/Logger.h"
+#include "../../Scene/Scene.h"
 
 unsigned int Cube::m_VAO = 0;
 unsigned int Cube::m_VBO = 0;
 unsigned int Cube::m_EBO = 0;
 bool Cube::m_Initialized = false;
 
-Cube::Cube(const Shader& shader) : m_Shader(shader)
+Cube::Cube(const Shader& shader) : m_Shader(shader), m_Model(glm::mat4(1.f))
 {
     if (!m_Initialized)
     {
@@ -90,11 +92,11 @@ Cube::~Cube()
 
 void Cube::Draw()
 {
-    glm::mat4 model = glm::mat4(1.0f);
-    model = glm::translate(model, this->m_Positon);
-    model = glm::scale(model, glm::vec3(1.f));
-
-    this->m_Shader.setMat4("u_Model", model);
+    m_Shader.use();
+    m_Shader.setMat4("u_Projection", Scene::m_Camera->GetProjection());
+    m_Shader.setMat4("u_View", Scene::m_Camera->GetView());
+   
+    this->m_Shader.setMat4("u_Model", m_Model);
 
     glBindVertexArray(m_VAO);
     glDrawArrays(GL_TRIANGLES, 0, 36);
@@ -120,6 +122,16 @@ void Cube::SetMass(float mass)
 void Cube::SetShader(const Shader& shader)
 {
     this->m_Shader = shader;
+}
+
+void Cube::Scale(glm::vec3 scale)
+{
+    this->m_Model = glm::scale(m_Model, scale);
+}
+
+void Cube::Rotate(float degrees, glm::vec3 rotationVector)
+{
+    this->m_Model = glm::rotate(m_Model, glm::radians(degrees), rotationVector);
 }
 
 const glm::vec3 &Cube::GetPosition() const

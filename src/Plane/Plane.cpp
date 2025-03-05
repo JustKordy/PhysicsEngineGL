@@ -4,7 +4,7 @@
 
 bool Plane::m_Initialized = false;
 
-Plane::Plane(const Shader& shader) : m_Shader(shader)
+Plane::Plane(const Shader& shader) : m_Shader(shader), m_Model(glm::mat4(1.f))
 {
     if(!m_Initialized)
     {
@@ -41,7 +41,7 @@ Plane::Plane(const Shader& shader) : m_Shader(shader)
         glBindVertexArray(0);
 
         m_Initialized = true;
-
+    
     }
 }
 
@@ -52,23 +52,42 @@ Plane::~Plane()
     glDeleteBuffers(1, &m_EBO);
 }
 
+void Plane::Update() {
+    for(int i = 0; i < m_Components.size(); i++)
+    {
+        m_Components[i]->Update();
+    }
+}
+
+void Plane::Scale(glm::vec3 scale)
+{
+    this->m_Model = glm::scale(m_Model, scale);
+}
+
+void Plane::Rotate(float degrees, glm::vec3 scalingVector)
+{
+    this->m_Model = glm::rotate(m_Model, glm::radians(degrees), scalingVector);
+}
+
 void Plane::Draw()
 {   
-    glm::mat4 model = glm::mat4(1.f);
-    model = glm::translate(model, m_Position);
-    this->m_Shader.setMat4("u_Model", model);
-
+    this->m_Shader.use();
+    this->m_Shader.setMat4("u_Projection", Scene::m_Camera->GetProjection());
+    this->m_Shader.setMat4("u_View", Scene::m_Camera->GetView());
+    this->m_Shader.setMat4("u_Model", m_Model);
+ 
     glBindVertexArray(m_VAO);
     glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
     glBindVertexArray(0);
 }
 
-void Plane::SetPosition(glm::vec3& pos)
+void Plane::SetPosition(glm::vec3 pos)
 {
     this->m_Position = pos;
+    this->m_Model = glm::translate(m_Model, pos);
 }
 
-void Plane::SetShader(Shader &shader)
+void Plane::SetShader(Shader& shader)
 {
     this->m_Shader = shader;
 }
