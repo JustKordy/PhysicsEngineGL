@@ -12,6 +12,7 @@
 #include "imgui/imgui_impl_glfw.h"
 #include "imgui/imgui_impl_opengl3.h"
 #include "Components/RigidBody/RigidBody.h"
+#include "Components/Transform/Transform.h"
 #include "Shapes/Cube/Cube.h"
 #include "Renderer/Renderer.h"
 #include "Plane/Plane.h"
@@ -65,15 +66,17 @@ int main()
     Cube* cube = new Cube(cubeShader);
     Plane* plane = new Plane(planeShader);
 
-    
-
-    cube->SetPosition(glm::vec3(0.f, 1.f, -8.f));
+   
     cube->Scale(glm::vec3(.3f));
-    plane->SetPosition(glm::vec3(0.f, -2.f, -8.f));
+    cube->AddComponent<RigidBody>();
+    cube->AddComponent<Transform>();
 
-
-    unsigned int transparentTexture = Utils::LoadTexture(Utils::GetResourcePath("transBack.png").c_str());
+    plane->AddComponent<Transform>(glm::vec3(0.f, -3.f, -5.f));
+    plane->AddComponent<RigidBody>();
+    plane->SetTexture("transBack.png");
     
+    scene->AddRenderableObject(cube);
+    scene->AddRenderableObject(plane);
 
     IMGUI_CHECKVERSION();
     ImGui::CreateContext();
@@ -96,21 +99,14 @@ int main()
         Utils::SetDeltaTime(deltaTime);
         lastFrame = currentFrame;
 
-        glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
-        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
         Scene::m_Camera->HandleInput(window);
         Scene::m_Camera->Update();
 
-       
+        cube->GetComponent<Transform>()->SetPosition(glm::vec3((float)sin(glfwGetTime())));
+
+        scene->Update();
+     
         
-        Renderer::Render(cube); 
-        
-      
-        glActiveTexture(GL_TEXTURE0);
-        glBindTexture(GL_TEXTURE_2D, transparentTexture);
-        planeShader.setInt("tex", 0);
-        Renderer::Render(plane);
         
 
         ImGui::Begin("Template");

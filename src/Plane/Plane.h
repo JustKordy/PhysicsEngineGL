@@ -7,7 +7,7 @@
 #include "../Scene/Scene.h"
 
 
-class Plane : Renderable{
+class Plane : public Renderable{
 public:
     Plane(const Shader& shader);
     ~Plane();
@@ -15,22 +15,42 @@ public:
     void Draw() override;
     void Update() override;
 
+    void SetTexture(const char* path);
+
     void Scale(glm::vec3 scale);
     void Rotate(float degrees, glm::vec3 scalingVector);
 
-    void SetPosition(glm::vec3 pos);
     void SetShader(Shader& shader);
 
-    const glm::vec3& GetPosition();
+    template<typename T>
+    T* GetComponent()
+    {
+        for(Component* comp : m_Components)
+        {
+            if(T* component = dynamic_cast<T*>(comp)){
+                return component;
+            }   
+        }
+        return nullptr;
+    }
+
+    template<typename T, typename... Targs>
+    T* AddComponent(Targs&&... args){
+        T* comp = new T(std::forward<Targs>(args)...);
+        m_Components.push_back(comp);
+        return comp;
+     
+    }
+    
 
 private:
     std::vector<Component*> m_Components;
 
     glm::mat4 m_Model;
-    glm::vec3 m_Position;
     unsigned int m_VBO;
     unsigned int m_VAO;
     unsigned int m_EBO;
     Shader m_Shader;
     static bool m_Initialized;
+    unsigned int m_Texture;
 };

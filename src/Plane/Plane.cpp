@@ -1,6 +1,9 @@
 #include "Plane.h"
 #include <GL/glew.h>
 #include <glm/gtc/matrix_transform.hpp>
+#include "../Utils/Utils.h"
+#include "../Logger/Logger.h"
+#include "../Components/Transform/Transform.h"
 
 bool Plane::m_Initialized = false;
 
@@ -57,6 +60,28 @@ void Plane::Update() {
     {
         m_Components[i]->Update();
     }
+
+    if(auto* comp = this->GetComponent<Transform>())
+    {
+        glm::mat4 tr = glm::mat4(1.f);
+        tr = glm::translate(tr, comp->GetPosition());
+        this->m_Model = tr;
+    }
+    else{
+        Logger::Error("Couldnt find the transform component");
+    }
+}
+
+void Plane::SetTexture(const char *path)
+{
+    unsigned int text = Utils::LoadTexture(Utils::GetResourcePath(path).c_str());
+    if(text)
+    {
+        this->m_Texture = text;
+    }
+    else{
+        Logger::Log("Failed to load texture with path:", path);
+    }
 }
 
 void Plane::Scale(glm::vec3 scale)
@@ -75,24 +100,17 @@ void Plane::Draw()
     this->m_Shader.setMat4("u_Projection", Scene::m_Camera->GetProjection());
     this->m_Shader.setMat4("u_View", Scene::m_Camera->GetView());
     this->m_Shader.setMat4("u_Model", m_Model);
+     
+    glActiveTexture(GL_TEXTURE0);
+    glBindTexture(GL_TEXTURE_2D, m_Texture);
+    this->m_Shader.setInt("tex", 0);
  
     glBindVertexArray(m_VAO);
     glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
     glBindVertexArray(0);
 }
 
-void Plane::SetPosition(glm::vec3 pos)
-{
-    this->m_Position = pos;
-    this->m_Model = glm::translate(m_Model, pos);
-}
-
 void Plane::SetShader(Shader& shader)
 {
     this->m_Shader = shader;
-}
-
-const glm::vec3 &Plane::GetPosition()
-{
-   return this->m_Position;
 }

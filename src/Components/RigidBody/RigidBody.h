@@ -1,7 +1,8 @@
 #pragma once
 #include "../Component.h"
+#include "../../Logger/Logger.h"
 
-class RigidBody : Component {
+class RigidBody : public Component {
 public:
     RigidBody(){
 
@@ -11,7 +12,10 @@ public:
     }
 
     void Update() override {
-
+        
+    }
+    void Hello(){
+        Logger::Log("HELLO FROM RG");
     }
 
 };

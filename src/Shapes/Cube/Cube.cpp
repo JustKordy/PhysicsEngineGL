@@ -2,6 +2,7 @@
 #include <GL/glew.h>
 #include "../../Logger/Logger.h"
 #include "../../Scene/Scene.h"
+#include "../../Components/Transform/Transform.h"
 
 unsigned int Cube::m_VAO = 0;
 unsigned int Cube::m_VBO = 0;
@@ -105,11 +106,17 @@ void Cube::Draw()
 
 void Cube::Update()
 {
+    if(auto* trans = this->GetComponent<Transform>())
+    {
+        glm::mat4 tr = glm::mat4(1.f);
+        tr = glm::translate(tr, trans->GetPosition());
+        this->m_Model = tr;
+    }
+    else{
+        Logger::Error("Couldnt get the transform component");
+    }
 }
-void Cube::SetPosition(glm::vec3&& pos)
-{
-    this->m_Positon = pos;
-}
+
 void Cube::SetAcceleration(glm::vec3&& acc)
 {
     this->m_Acceleration = acc;
@@ -134,10 +141,7 @@ void Cube::Rotate(float degrees, glm::vec3 rotationVector)
     this->m_Model = glm::rotate(m_Model, glm::radians(degrees), rotationVector);
 }
 
-const glm::vec3 &Cube::GetPosition() const
-{
-    return this->m_Positon;
-}
+
 const glm::vec3 &Cube::GetVelocity() const
 {
     return this->m_Velocity;
