@@ -1,3 +1,0 @@
-C:/Users/Kordys/Desktop/All/projects/PhysicsEngineGL/build/CMakeFiles/MyProject.dir
-C:/Users/Kordys/Desktop/All/projects/PhysicsEngineGL/build/CMakeFiles/ALL_BUILD.dir
-C:/Users/Kordys/Desktop/All/projects/PhysicsEngineGL/build/CMakeFiles/ZERO_CHECK.dir
