@@ -16,13 +16,16 @@ void Scene::SetUI(UI *ui)
 
 void Scene::OnScroll(GLFWwindow *window, double xoffset, double yoffset)
 {
-  
+    if (ImGui::GetIO().WantCaptureMouse)
+        return;
+
     Scene::m_Camera->HandleZoom(yoffset);
 }
 
 void Scene::OnClick(GLFWwindow *window, int button, int action, int mods)
 {
-  
+    if (ImGui::GetIO().WantCaptureMouse)
+        return;
 
     if (button == GLFW_MOUSE_BUTTON_LEFT && action == GLFW_PRESS)
         Utils::SetMouseClicked(true);
@@ -32,7 +35,9 @@ void Scene::OnClick(GLFWwindow *window, int button, int action, int mods)
 
 void Scene::OnMouseMove(GLFWwindow *window, double xposIn, double yposIn)
 {
-    
+    if (ImGui::GetIO().WantCaptureMouse)
+        return;
+
     Scene::m_Camera->HandleLook(xposIn, yposIn, Utils::isMouseClicked());
 }
 

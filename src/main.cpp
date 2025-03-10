@@ -22,8 +22,7 @@ void framebuffer_size_callback(GLFWwindow *window, int width, int height);
 float deltaTime = 0.0f;
 float lastFrame = 0.0f;
 
-
-Camera* Scene::m_Camera = new Camera();
+Camera *Scene::m_Camera = new Camera();
 int main()
 {
     glfwInit();
@@ -40,7 +39,6 @@ int main()
     GLFWwindow *window = glfwCreateWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "LearnOpenGL", nullptr, nullptr);
     glfwMakeContextCurrent(window);
 
-
     glewExperimental = GL_FALSE;
     glewInit();
 
@@ -50,15 +48,20 @@ int main()
 
     glEnable(GL_DEPTH_TEST);
 
+    Scene *scene = new Scene();
+
+    glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
+    glfwSetCursorPosCallback(window, scene->OnMouseMove);
+    glfwSetScrollCallback(window, scene->OnScroll);
+    glfwSetMouseButtonCallback(window, scene->OnClick);
+
     Shader cubeShader(Utils::GetResourcePath("/shaders/cube.vert").c_str(), Utils::GetResourcePath("/shaders/cube.frag").c_str());
     Shader planeShader(Utils::GetResourcePath("/shaders/plane.vert").c_str(), Utils::GetResourcePath("/shaders/plane.frag").c_str());
 
-    
-    Scene* scene = new Scene();
-    Cube* cube = new Cube(cubeShader);
-    Plane* plane = new Plane(planeShader);
-    UI* ui = new UI(window);
-   
+    Cube *cube = new Cube(cubeShader);
+    Plane *plane = new Plane(planeShader);
+    UI *ui = new UI(window);
+
     cube->Scale(glm::vec3(.3f));
     cube->AddComponent<RigidBody>();
     cube->AddComponent<Transform>();
@@ -66,16 +69,10 @@ int main()
     plane->AddComponent<Transform>(glm::vec3(0.f, -3.f, -5.f));
     plane->AddComponent<RigidBody>();
     plane->SetTexture("transBack.png");
-    
+
     scene->AddRenderableObject(cube);
     scene->AddRenderableObject(plane);
     scene->SetUI(ui);
-
-    
-    glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
-    glfwSetCursorPosCallback(window, scene->OnMouseMove);
-    glfwSetScrollCallback(window, scene->OnScroll);
-    glfwSetMouseButtonCallback(window, scene->OnClick);
 
     while (!glfwWindowShouldClose(window))
     {
@@ -91,17 +88,11 @@ int main()
         cube->GetComponent<Transform>()->SetPosition(glm::vec3((float)sin(glfwGetTime())));
 
         scene->Update();
-     
-        
-        
-
-     
 
         glfwSwapBuffers(window);
         glfwPollEvents();
     }
 
-   
     glfwTerminate();
     return 0;
 }
