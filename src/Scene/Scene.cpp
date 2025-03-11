@@ -1,5 +1,7 @@
 #include "Scene.h"
 #include "../Utils/Utils.h"
+#include "../Components/Transform/Transform.h"
+#include "../Shapes/Cube/Cube.h"
 
 Scene::Scene()
 {
@@ -12,7 +14,10 @@ Scene::~Scene()
 void Scene::SetUI(UI *ui)
 {
     this->m_UI = ui;
+    m_UI->OnAddCube = [this]() {this->AddCube(); };
 }
+
+
 
 void Scene::OnScroll(GLFWwindow *window, double xoffset, double yoffset)
 {
@@ -63,4 +68,12 @@ void Scene::Update()
 const std::vector<Renderable *> &Scene::GetRenderableObjects()
 {
     return this->m_RenderableObjects;
+}
+
+void Scene::AddCube()
+{
+    static Shader cubeShader(Utils::GetResourcePath("/shaders/cube.vert").c_str(), Utils::GetResourcePath("/shaders/cube.frag").c_str());
+    Cube* cube = new Cube(cubeShader);
+    cube->AddComponent<Transform>()->SetPosition(glm::vec3{sin((float)glfwGetTime()) * 10,sin((float)glfwGetTime()) * 10,sin((float)glfwGetTime()) * 10});
+    AddRenderableObject(cube);
 }

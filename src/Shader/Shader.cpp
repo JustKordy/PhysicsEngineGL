@@ -2,6 +2,7 @@
 #include "Shader.h"
 #include "../Logger/Logger.h"
 #include <fstream>
+#include <GL/glew.h>
 
 
 Shader::Shader(const char *vertexPath, const char *fragmentPath){

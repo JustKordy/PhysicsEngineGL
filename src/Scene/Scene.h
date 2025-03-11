@@ -39,4 +39,6 @@ private:
     std::vector<Renderable*> m_RenderableObjects;
     UI* m_UI;
 
+    void AddCube();
+
 };

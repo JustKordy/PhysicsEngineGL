@@ -25,11 +25,14 @@ UI::~UI()
     ImGui::DestroyContext();
 }
 
+
 void UI::Update()
 {
     ImGui_ImplOpenGL3_NewFrame();
     ImGui_ImplGlfw_NewFrame();
     ImGui::NewFrame();
+    ImGui::SetWindowPos({0, 0});
+    ImGui::SetWindowSize({100, 960});
 
     this->DrawUI();
 
@@ -39,9 +42,17 @@ void UI::Update()
     
 }
 
+float col[3];
 void UI::DrawUI()
 {
-    ImGui::Begin("Template");
-    ImGui::Text("Some text");
+    ImGui::Begin("Window");
+    ImGui::SeparatorText("Add cube section");
+    ImGui::ColorEdit3("Pick color", col);
+    if(ImGui::Button("Add Cube")){
+        if(OnAddCube)
+        {
+            OnAddCube();
+        }
+    }
     ImGui::End();
 }

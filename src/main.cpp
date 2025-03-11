@@ -85,8 +85,6 @@ int main()
         Scene::m_Camera->HandleInput(window);
         Scene::m_Camera->Update();
 
-        cube->GetComponent<Transform>()->SetPosition(glm::vec3((float)sin(glfwGetTime())));
-
         scene->Update();
 
         glfwSwapBuffers(window);

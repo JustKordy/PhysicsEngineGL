@@ -3,6 +3,7 @@
 #include "../../Logger/Logger.h"
 #include "../../Scene/Scene.h"
 #include "../../Components/Transform/Transform.h"
+#include "../../Shader/Shader.h"
 
 unsigned int Cube::m_VAO = 0;
 unsigned int Cube::m_VBO = 0;

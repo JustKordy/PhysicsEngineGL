@@ -4,6 +4,7 @@
 #include "../Utils/Utils.h"
 #include "../Logger/Logger.h"
 #include "../Components/Transform/Transform.h"
+#include "../Scene/Scene.h"
 
 bool Plane::m_Initialized = false;
 

@@ -4,7 +4,7 @@
 #include "../Shader/Shader.h"
 #include "../Renderable/Renderable.h"
 #include "../Components/Component.h"
-#include "../Scene/Scene.h"
+
 
 
 class Plane : public Renderable{
