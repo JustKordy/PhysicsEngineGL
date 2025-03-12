@@ -36,7 +36,7 @@ int main()
     glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
 #endif
 
-    GLFWwindow *window = glfwCreateWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "LearnOpenGL", nullptr, nullptr);
+    GLFWwindow *window = glfwCreateWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "Physics engine", nullptr, nullptr);
     glfwMakeContextCurrent(window);
 
     glewExperimental = GL_FALSE;
@@ -48,7 +48,7 @@ int main()
 
     glEnable(GL_DEPTH_TEST);
 
-    Scene *scene = new Scene();
+    Scene* scene = new Scene();
 
     glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
     glfwSetCursorPosCallback(window, scene->OnMouseMove);
@@ -62,7 +62,7 @@ int main()
     Plane *plane = new Plane(planeShader);
     UI *ui = new UI(window);
 
-    cube->Scale(glm::vec3(.3f));
+    cube->Scale(glm::vec3(1.f));
     cube->AddComponent<RigidBody>();
     cube->AddComponent<Transform>();
 

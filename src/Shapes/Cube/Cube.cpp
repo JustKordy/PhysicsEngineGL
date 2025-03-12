@@ -85,7 +85,8 @@ Cube::Cube(const Shader& shader) : m_Shader(shader), m_Model(glm::mat4(1.f))
         glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void *)(3 * sizeof(float)));
         glEnableVertexAttribArray(1);
         
-    }
+    }  
+    m_Scale = glm::vec3(1.f);
 }
 
 Cube::~Cube()
@@ -97,8 +98,8 @@ void Cube::Draw()
     m_Shader.use();
     m_Shader.setMat4("u_Projection", Scene::m_Camera->GetProjection());
     m_Shader.setMat4("u_View", Scene::m_Camera->GetView());
-   
-    this->m_Shader.setMat4("u_Model", m_Model);
+    m_Shader.setVec4("u_Color", m_Color);
+    m_Shader.setMat4("u_Model", m_Model);
 
     glBindVertexArray(m_VAO);
     glDrawArrays(GL_TRIANGLES, 0, 36);
@@ -111,6 +112,7 @@ void Cube::Update()
     {
         glm::mat4 tr = glm::mat4(1.f);
         tr = glm::translate(tr, trans->GetPosition());
+        tr = glm::scale(tr, m_Scale);
         this->m_Model = tr;
     }
     else{
@@ -132,9 +134,14 @@ void Cube::SetShader(const Shader& shader)
     this->m_Shader = shader;
 }
 
+void Cube::SetColor(glm::vec4 color)
+{
+   this->m_Color = color;
+}
+
 void Cube::Scale(glm::vec3 scale)
 {
-    this->m_Model = glm::scale(m_Model, scale);
+    this->m_Scale = scale;
 }
 
 void Cube::Rotate(float degrees, glm::vec3 rotationVector)

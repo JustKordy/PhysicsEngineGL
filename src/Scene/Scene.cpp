@@ -14,7 +14,7 @@ Scene::~Scene()
 void Scene::SetUI(UI *ui)
 {
     this->m_UI = ui;
-    m_UI->OnAddCube = [this]() {this->AddCube(); };
+    m_UI->OnAddCube = [this](UI::CubeOptions options) {this->AddCube(options); };
 }
 
 
@@ -70,10 +70,13 @@ const std::vector<Renderable *> &Scene::GetRenderableObjects()
     return this->m_RenderableObjects;
 }
 
-void Scene::AddCube()
+void Scene::AddCube(UI::CubeOptions options)
 {
     static Shader cubeShader(Utils::GetResourcePath("/shaders/cube.vert").c_str(), Utils::GetResourcePath("/shaders/cube.frag").c_str());
+
     Cube* cube = new Cube(cubeShader);
-    cube->AddComponent<Transform>()->SetPosition(glm::vec3{sin((float)glfwGetTime()) * 10,sin((float)glfwGetTime()) * 10,sin((float)glfwGetTime()) * 10});
+    cube->SetColor(options.color);
+    cube->AddComponent<Transform>()->SetPosition(options.position);
+    cube->Scale(glm::vec3(options.scale));
     AddRenderableObject(cube);
 }
