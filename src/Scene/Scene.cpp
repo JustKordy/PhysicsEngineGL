@@ -1,7 +1,9 @@
 #include "Scene.h"
 #include "../Utils/Utils.h"
 #include "../Components/Transform/Transform.h"
+#include "../Components/RigidBody/RigidBody.h"
 #include "../Shapes/Cube/Cube.h"
+#include "../Memory/Memory.h"
 
 Scene::Scene()
 {
@@ -15,9 +17,9 @@ void Scene::SetUI(UI *ui)
 {
     this->m_UI = ui;
     m_UI->OnAddCube = [this](UI::CubeOptions options) {this->AddCube(options); };
+    m_UI->m_RenderableObjects = &m_RenderableObjects;
+    m_UI->OnDestroyObject = [this](int index) { this->DestroyObject(index); };
 }
-
-
 
 void Scene::OnScroll(GLFWwindow *window, double xoffset, double yoffset)
 {
@@ -70,13 +72,24 @@ const std::vector<Renderable *> &Scene::GetRenderableObjects()
     return this->m_RenderableObjects;
 }
 
+// PRIVATE :: ::  : : : :: 
+
 void Scene::AddCube(UI::CubeOptions options)
 {
     static Shader cubeShader(Utils::GetResourcePath("/shaders/cube.vert").c_str(), Utils::GetResourcePath("/shaders/cube.frag").c_str());
 
     Cube* cube = new Cube(cubeShader);
+    auto* rb = cube->AddComponent<RigidBody>();
+    rb->SetMass(options.mass);
+    rb->SetAcceleration(glm::vec3(0.0f, -9.81f, 0.f) / rb->GetMass());
     cube->SetColor(options.color);
     cube->AddComponent<Transform>()->SetPosition(options.position);
     cube->Scale(glm::vec3(options.scale));
     AddRenderableObject(cube);
+}
+
+void Scene::DestroyObject(int index)
+{
+    Memory::Clean(m_RenderableObjects[index]);
+    m_RenderableObjects.erase(m_RenderableObjects.begin() + index);
 }

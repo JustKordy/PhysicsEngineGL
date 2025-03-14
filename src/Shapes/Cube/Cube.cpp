@@ -1,8 +1,10 @@
 #include "Cube.h"
 #include <GL/glew.h>
+#include "../../Utils/Utils.h"
 #include "../../Logger/Logger.h"
 #include "../../Scene/Scene.h"
 #include "../../Components/Transform/Transform.h"
+#include "../../Components/RigidBody/RigidBody.h"
 #include "../../Shader/Shader.h"
 
 unsigned int Cube::m_VAO = 0;
@@ -91,6 +93,10 @@ Cube::Cube(const Shader& shader) : m_Shader(shader), m_Model(glm::mat4(1.f))
 
 Cube::~Cube()
 {
+    for(int i = m_Components.size() - 1; i >= 0; i--){
+        delete m_Components[i];
+        m_Components.erase(m_Components.begin() + i);
+    }
 }
 
 void Cube::Draw()
@@ -108,25 +114,25 @@ void Cube::Draw()
 
 void Cube::Update()
 {
-    if(auto* trans = this->GetComponent<Transform>())
-    {
-        glm::mat4 tr = glm::mat4(1.f);
-        tr = glm::translate(tr, trans->GetPosition());
-        tr = glm::scale(tr, m_Scale);
-        this->m_Model = tr;
+    for(int i = 0; i < m_Components.size(); i++){
+        m_Components[i]->Update();
+    }
+
+    if(auto* rb = GetComponent<RigidBody>()){
+        if(auto* tr = GetComponent<Transform>()){
+            m_Model = glm::mat4(1.f);
+            tr->SetPosition(tr->GetPosition() + rb->GetVelocity() * Utils::GetDeltaTime());
+            m_Model = glm::translate(m_Model, tr->GetPosition());
+            m_Model = glm::scale(m_Model, m_Scale);
+
+        }   
+        else{
+            Logger::Error("Couldnt get the Transform component");
+        }
     }
     else{
-        Logger::Error("Couldnt get the transform component");
+        Logger::Error("Couldnt get the RigidBody component");
     }
-}
-
-void Cube::SetAcceleration(glm::vec3&& acc)
-{
-    this->m_Acceleration = acc;
-}
-void Cube::SetMass(float mass)
-{
-    this->m_Mass = mass;
 }
 
 void Cube::SetShader(const Shader& shader)
@@ -149,17 +155,3 @@ void Cube::Rotate(float degrees, glm::vec3 rotationVector)
     this->m_Model = glm::rotate(m_Model, glm::radians(degrees), rotationVector);
 }
 
-
-const glm::vec3 &Cube::GetVelocity() const
-{
-    return this->m_Velocity;
-}
-const glm::vec3 &Cube::GetAcceleration() const
-{
-    return this->m_Acceleration;
-}
-
-const float &Cube::GetMass() const
-{
-    return this->m_Mass;
-}

@@ -40,5 +40,6 @@ private:
     UI* m_UI;
 
     void AddCube(UI::CubeOptions options);
+    void DestroyObject(int index);
 
 };

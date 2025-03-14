@@ -58,19 +58,14 @@ int main()
     Shader cubeShader(Utils::GetResourcePath("/shaders/cube.vert").c_str(), Utils::GetResourcePath("/shaders/cube.frag").c_str());
     Shader planeShader(Utils::GetResourcePath("/shaders/plane.vert").c_str(), Utils::GetResourcePath("/shaders/plane.frag").c_str());
 
-    Cube *cube = new Cube(cubeShader);
     Plane *plane = new Plane(planeShader);
     UI *ui = new UI(window);
 
-    cube->Scale(glm::vec3(1.f));
-    cube->AddComponent<RigidBody>();
-    cube->AddComponent<Transform>();
-
-    plane->AddComponent<Transform>(glm::vec3(0.f, -3.f, -5.f));
+    
+    plane->AddComponent<Transform>(glm::vec3(0.f, -2.f, 0.f));
     plane->AddComponent<RigidBody>();
     plane->SetTexture("transBack.png");
 
-    scene->AddRenderableObject(cube);
     scene->AddRenderableObject(plane);
     scene->SetUI(ui);
 
