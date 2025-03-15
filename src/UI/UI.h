@@ -6,6 +6,11 @@
 #include <functional>
 #include <GLFW/glfw3.h>
 #include "../Renderable/Renderable.h"
+#include "../Components/Transform/Transform.h"
+#include "../Components/RigidBody/RigidBody.h"
+#include "../Renderable/Renderable.h"
+#include "../Shapes/Cube/Cube.h"
+#include "../Plane/Plane.h"
 #include <vector>
 
 class UI
@@ -29,7 +34,15 @@ public:
    
     std::vector<Renderable*>* m_RenderableObjects;
 private:
+    enum Shapes {
+        CubeShape = 0,
+        PlaneShape = 1,
+    };
+
     void DrawUI();
+
+    
+    void DrawShapeInfo(Shapes shape, Renderable* obj, int index);
 
 
 };  

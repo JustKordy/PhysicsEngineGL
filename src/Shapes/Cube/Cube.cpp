@@ -87,15 +87,15 @@ Cube::Cube(const Shader& shader) : m_Shader(shader), m_Model(glm::mat4(1.f))
         glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void *)(3 * sizeof(float)));
         glEnableVertexAttribArray(1);
         
-    }  
+        Cube::m_Initialized = true;
+    }
     m_Scale = glm::vec3(1.f);
 }
 
 Cube::~Cube()
 {
-    for(int i = m_Components.size() - 1; i >= 0; i--){
+    for(int i = m_Components.size() - 1; i <= 0; i--){
         delete m_Components[i];
-        m_Components.erase(m_Components.begin() + i);
     }
 }
 

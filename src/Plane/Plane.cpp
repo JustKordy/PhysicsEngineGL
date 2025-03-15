@@ -51,6 +51,10 @@ Plane::Plane(const Shader& shader) : m_Shader(shader), m_Model(glm::mat4(1.f))
 
 Plane::~Plane()
 {
+    for(int i = m_Components.size() - 1; i <= 0; i--)
+    {
+        delete m_Components[i];
+    }
     glDeleteVertexArrays(1, &m_VAO);
     glDeleteBuffers(1, &m_VBO);
     glDeleteBuffers(1, &m_EBO);

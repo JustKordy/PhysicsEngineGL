@@ -2,6 +2,7 @@
 #include <glm/glm.hpp>
 #include "../Component.h"
 #include "../../Logger/Logger.h"
+#include "../../Shapes/Shape.h"
 
 class RigidBody : public Component {
 public:
@@ -22,5 +23,8 @@ private:
     glm::vec3 m_Velocity;
     glm::vec3 m_Acceleration;
     float m_Mass;
+
+protected:
+    Shape* m_Owner { nullptr };
 
 };

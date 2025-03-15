@@ -1,6 +1,7 @@
 #pragma once
 #include "../Component.h"
 #include <glm/glm.hpp>
+#include "../../Shapes/Shape.h"
 
 
 class Transform: public Component {
@@ -17,4 +18,8 @@ public:
     
 private:
     glm::vec3 m_Position;
+
+protected:
+    Shape* m_Owner { nullptr };
+
 };
