@@ -3,6 +3,9 @@
 
 RigidBody::RigidBody()
 {
+    this->m_Acceleration = glm::vec3(0.f);
+    this->m_Velocity = glm::vec3(0.f);
+
 }
 
 RigidBody::~RigidBody()

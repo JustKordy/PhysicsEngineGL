@@ -94,8 +94,9 @@ Cube::Cube(const Shader& shader) : m_Shader(shader), m_Model(glm::mat4(1.f))
 
 Cube::~Cube()
 {
-    for(int i = m_Components.size() - 1; i <= 0; i--){
+    for(int i = m_Components.size() - 1; i >= 0; i--){
         delete m_Components[i];
+        Logger::Log("Call");
     }
 }
 

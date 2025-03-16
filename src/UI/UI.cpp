@@ -42,7 +42,8 @@ void UI::DrawUI()
         glm::vec4(1.f),
         glm::vec3(0.f),
         1,
-        1};
+        1
+    };
 
     static int first = 0;
     static const char *arr[10];
@@ -106,11 +107,7 @@ void UI::DrawShapeInfo(Shapes shape, Renderable *obj, int index)
                     Logger::Error("Couldnt get components");
                     break;
                 }
-                if (objTr->GetPosition().y <= -100.f)
-                {
-                    OnDestroyObject(index);
-                }
-
+                
                 ImGui::Text("Cube %i", index);
                 ImGui::Text("X: %f Y: %f Z: %f", objTr->GetPosition().x, objTr->GetPosition().y, objTr->GetPosition().z);
                 ImGui::Text("Mass: %f", objRb->GetMass());
@@ -133,9 +130,9 @@ void UI::DrawShapeInfo(Shapes shape, Renderable *obj, int index)
 
         case Shapes::PlaneShape:
         {
-            Plane *CubeObj = dynamic_cast<Plane *>(obj);
-            Transform *objTr = CubeObj->GetComponent<Transform>();
-            RigidBody *objRb = CubeObj->GetComponent<RigidBody>();
+            Plane *PlaneObj = dynamic_cast<Plane *>(obj);
+            Transform *objTr = PlaneObj->GetComponent<Transform>();
+            RigidBody *objRb = PlaneObj->GetComponent<RigidBody>();
             if (objTr->GetPosition().y <= -100.f)
             {
                 OnDestroyObject(index);

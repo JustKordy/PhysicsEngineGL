@@ -11,7 +11,7 @@ class Cube : public Shape
 {
 public:
     Cube(const Shader& shader);
-    ~Cube();
+    ~Cube() override;
 
     void Draw() override;
     void Update() override;

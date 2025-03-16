@@ -5,7 +5,7 @@
 
 class Shape : public Renderable{
 public:
-    
+    virtual ~Shape() = default;
     virtual void Update() = 0;
     
     virtual void Scale(glm::vec3 scale) = 0;

@@ -16,9 +16,11 @@ Scene::~Scene()
 void Scene::SetUI(UI *ui)
 {
     this->m_UI = ui;
-    m_UI->OnAddCube = [this](UI::CubeOptions options) {this->AddCube(options); };
+    m_UI->OnAddCube = [this](UI::CubeOptions options)
+    { this->AddCube(options); };
     m_UI->m_RenderableObjects = &m_RenderableObjects;
-    m_UI->OnDestroyObject = [this](int index) { this->DestroyObject(index); };
+    m_UI->OnDestroyObject = [this](int index)
+    { this->DestroyObject(index); };
 }
 
 void Scene::OnScroll(GLFWwindow *window, double xoffset, double yoffset)
@@ -58,12 +60,20 @@ void Scene::Update()
     glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-    for (int i = 0; i < m_RenderableObjects.size(); i++)
+    for (int i = 0; i < m_RenderableObjects.size();)
     {
+        if (auto *cubeObj = dynamic_cast<Cube *>(m_RenderableObjects[i]))
+        {
+            if (cubeObj->GetComponent<Transform>()->GetPosition().y <= -100.f)
+            {
+                DestroyObject(i);
+                continue;
+            }
+        }
         m_RenderableObjects[i]->Update();
         m_RenderableObjects[i]->Draw();
+        i++;
     }
-
     this->m_UI->Update();
 }
 
@@ -72,14 +82,14 @@ const std::vector<Renderable *> &Scene::GetRenderableObjects()
     return this->m_RenderableObjects;
 }
 
-// PRIVATE :: ::  : : : :: 
+// PRIVATE :: ::  : : : ::
 
 void Scene::AddCube(UI::CubeOptions options)
 {
     static Shader cubeShader(Utils::GetResourcePath("/shaders/cube.vert").c_str(), Utils::GetResourcePath("/shaders/cube.frag").c_str());
 
-    Cube* cube = new Cube(cubeShader);
-    auto* rb = cube->AddComponent<RigidBody>();
+    Cube *cube = new Cube(cubeShader);
+    auto *rb = cube->AddComponent<RigidBody>();
     rb->SetMass(options.mass);
     rb->SetAcceleration(glm::vec3(0.0f, -9.81f, 0.f) / rb->GetMass());
     cube->SetColor(options.color);
